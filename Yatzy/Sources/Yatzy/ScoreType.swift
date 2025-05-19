@@ -10,4 +10,5 @@ import Foundation
 enum ScoreType {
     case chance
     case ones
+    case twos
 }
