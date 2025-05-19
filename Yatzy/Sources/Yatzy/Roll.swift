@@ -13,6 +13,12 @@ struct Roll {
     let d5: Int
     
     func score(_ scoreType: ScoreType) -> Int {
-        d1 + d2 + d3 + d4 + d5
+        switch scoreType {
+            case .chance:
+                return d1 + d2 + d3 + d4 + d5
+        case .ones:
+            return (d1 == 1 ? 1 : 0) + (d2 == 1 ? 1 : 0) + (d3 == 1 ? 1 : 0) + (d4 == 1 ? 1 : 0) + (d5 == 1 ? 1 : 0)
+        }
+        
     }
 }
