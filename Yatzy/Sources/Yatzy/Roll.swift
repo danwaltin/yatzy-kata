@@ -24,8 +24,9 @@ struct Roll {
             return number(3)
         case .fours:
             return number(4)
+        case .fives:
+            return number(5)
         }
-        
     }
     
     private func number(_ num: Int) -> Int {
