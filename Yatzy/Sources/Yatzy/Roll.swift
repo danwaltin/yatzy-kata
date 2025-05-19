@@ -26,6 +26,8 @@ struct Roll {
             return number(4)
         case .fives:
             return number(5)
+        case .sixes:
+            return number(6)
         }
     }
     

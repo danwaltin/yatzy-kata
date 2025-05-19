@@ -14,4 +14,5 @@ enum ScoreType {
     case threes
     case fours
     case fives
+    case sixes
 }
