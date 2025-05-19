@@ -14,23 +14,25 @@ struct Roll {
     
     func score(_ scoreType: ScoreType) -> Int {
         switch scoreType {
-            case .chance:
-                return d1 + d2 + d3 + d4 + d5
+        case .chance:
+            return d1 + d2 + d3 + d4 + d5
         case .ones:
             return number(1)
         case .twos:
             return number(2)
         case .threes:
             return number(3)
+        case .fours:
+            return number(4)
         }
         
     }
     
     private func number(_ num: Int) -> Int {
         return (num == d1 ? num : 0) +
-                (num == d2 ? num : 0) +
-                (num == d3 ? num : 0) +
-                (num == d4 ? num : 0) +
-                (num == d5 ? num : 0)
+        (num == d2 ? num : 0) +
+        (num == d3 ? num : 0) +
+        (num == d4 ? num : 0) +
+        (num == d5 ? num : 0)
     }
 }
