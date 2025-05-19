@@ -17,10 +17,18 @@ struct Roll {
             case .chance:
                 return d1 + d2 + d3 + d4 + d5
         case .ones:
-            return (d1 == 1 ? 1 : 0) + (d2 == 1 ? 1 : 0) + (d3 == 1 ? 1 : 0) + (d4 == 1 ? 1 : 0) + (d5 == 1 ? 1 : 0)
+            return number(1)
         case .twos:
-            return (d1 == 2 ? 2 : 0) + (d2 == 2 ? 2 : 0) + (d3 == 2 ? 2 : 0) + (d4 == 2 ? 2 : 0) + (d5 == 2 ? 2 : 0)
+            return number(2)
         }
         
+    }
+    
+    private func number(_ num: Int) -> Int {
+        return (num == d1 ? num : 0) +
+                (num == d2 ? num : 0) +
+                (num == d3 ? num : 0) +
+                (num == d4 ? num : 0) +
+                (num == d5 ? num : 0)
     }
 }
