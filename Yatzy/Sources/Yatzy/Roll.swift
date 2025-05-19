@@ -20,6 +20,8 @@ struct Roll {
             return number(1)
         case .twos:
             return number(2)
+        case .threes:
+            return number(3)
         }
         
     }

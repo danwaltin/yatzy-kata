@@ -11,4 +11,5 @@ enum ScoreType {
     case chance
     case ones
     case twos
+    case threes
 }
