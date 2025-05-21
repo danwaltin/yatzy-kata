@@ -36,7 +36,10 @@ struct Roll {
             if number(1) >= 2 { return 2 }
             
             return 0
-            
+
+        case .twoPairs:
+            return 0
+
         case .chance:
             return d1 + d2 + d3 + d4 + d5
 
