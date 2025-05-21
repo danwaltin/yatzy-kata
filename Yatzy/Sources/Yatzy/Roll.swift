@@ -27,6 +27,10 @@ struct Roll {
         case .sixes:
             return number(6)
 
+        case .pair:
+            return 0
+
+            
         case .chance:
             return d1 + d2 + d3 + d4 + d5
 

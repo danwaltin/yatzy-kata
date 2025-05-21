@@ -15,7 +15,8 @@ enum ScoreType {
     case fives
     case sixes
 
-    case yatzy
-
+    case pair
+    
     case chance
+    case yatzy
 }
