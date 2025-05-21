@@ -28,8 +28,14 @@ struct Roll {
             return number(6)
 
         case .pair:
+            if number(6) >= 12 { return 12 }
+            if number(5) >= 10 { return 10 }
+            if number(4) >= 8 { return 8 }
+            if number(3) >= 6 { return 6 }
+            if number(2) >= 4 { return 4 }
+            if number(1) >= 2 { return 2 }
+            
             return 0
-
             
         case .chance:
             return d1 + d2 + d3 + d4 + d5
