@@ -29,10 +29,10 @@ struct Roll {
 
         case .pair:
             if number(6) >= 12 { return 12 }
-            if number(5) == 10 { return 10 }
-            if number(4) == 8 { return 8 }
-            if number(3) == 6 { return 6 }
-            if number(2) == 4 { return 4 }
+            if number(5) >= 10 { return 10 }
+            if number(4) >= 8 { return 8 }
+            if number(3) >= 6 { return 6 }
+            if number(2) >= 4 { return 4 }
             if number(1) >= 2 { return 2 }
             
             return 0
@@ -41,11 +41,11 @@ struct Roll {
             var pairs = [Int]()
             
             if number(6) >= 12 { pairs.append(12) }
-            if number(5) == 10 { pairs.append(10) }
-            if number(4) == 8 { pairs.append(8) }
+            if number(5) >= 10 { pairs.append(10) }
+            if number(4) >= 8 { pairs.append(8) }
             if number(3) >= 6 { pairs.append(6) }
             if number(2) >= 4 { pairs.append(4) }
-            if number(1) == 2 { pairs.append(2) }
+            if number(1) >= 2 { pairs.append(2) }
 
             if pairs.count == 2 {
                 return pairs[0] + pairs[1]

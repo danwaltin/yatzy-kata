@@ -48,8 +48,11 @@ func pair_two_dice_matches(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expected
     // d1 d2 d3 d4 d5  expectedScore
     // -----------------------------
     (   1, 1, 1, 1, 1,  2),
-    (   1, 1, 2, 2, 3,  4),
-    (   1, 6, 6, 2, 6, 12),
+    (   2, 1, 1, 2, 2,  4),
+    (   3, 2, 3, 2, 3,  6),
+    (   4, 2, 4, 2, 4,  8),
+    (   5, 2, 5, 2, 5, 10),
+    (   6, 1, 6, 2, 6, 12),
 ])
 func pair_sum_of_two_highest_matching(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) async throws {
     let roll = Roll(d1: d1, d2: d2, d3: d3, d4: d4, d5: d5)

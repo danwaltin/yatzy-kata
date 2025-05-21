@@ -32,8 +32,11 @@ func two_pairs(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) 
 @Test(arguments: [
     // d1 d2 d3 d4 d5  expectedScore
     // -----------------------------
-    (   1, 1, 2, 2, 2,  6),
+    (   1, 1, 1, 2, 2,  6),
+    (   2, 3, 3, 2, 2, 10),
     (   3, 3, 4, 4, 3, 14),
+    (   4, 4, 4, 5, 5, 18),
+    (   5, 6, 5, 6, 5, 22),
     (   6, 5, 6, 6, 5, 22),
 ])
 func two_pairs_when_three_equal(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) async throws {
