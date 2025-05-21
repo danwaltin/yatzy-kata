@@ -15,37 +15,37 @@ struct Roll {
     func score(_ scoreType: ScoreType) -> Int {
         switch scoreType {
         case .ones:
-            return number(1)
+            return count(showingSide: 1)
         case .twos:
-            return number(2)
+            return count(showingSide: 2) * 2
         case .threes:
-            return number(3)
+            return count(showingSide: 3) * 3
         case .fours:
-            return number(4)
+            return count(showingSide: 4) * 4
         case .fives:
-            return number(5)
+            return count(showingSide: 5) * 5
         case .sixes:
-            return number(6)
+            return count(showingSide: 6) * 6
 
         case .pair:
-            if number(6) >= 12 { return 12 }
-            if number(5) >= 10 { return 10 }
-            if number(4) >= 8 { return 8 }
-            if number(3) >= 6 { return 6 }
-            if number(2) >= 4 { return 4 }
-            if number(1) >= 2 { return 2 }
+            if count(showingSide: 6) >= 2 { return 12 }
+            if count(showingSide: 5) >= 2 { return 10 }
+            if count(showingSide: 4) >= 2 { return 8 }
+            if count(showingSide: 3) >= 2 { return 6 }
+            if count(showingSide: 2) >= 2 { return 4 }
+            if count(showingSide: 1) >= 2 { return 2 }
             
             return 0
 
         case .twoPairs:
             var pairs = [Int]()
             
-            if number(6) >= 12 { pairs.append(12) }
-            if number(5) >= 10 { pairs.append(10) }
-            if number(4) >= 8 { pairs.append(8) }
-            if number(3) >= 6 { pairs.append(6) }
-            if number(2) >= 4 { pairs.append(4) }
-            if number(1) >= 2 { pairs.append(2) }
+            if count(showingSide: 6) >= 2 { pairs.append(12) }
+            if count(showingSide: 5) >= 2 { pairs.append(10) }
+            if count(showingSide: 4) >= 2 { pairs.append(8) }
+            if count(showingSide: 3) >= 2 { pairs.append(6) }
+            if count(showingSide: 2) >= 2 { pairs.append(4) }
+            if count(showingSide: 1) >= 2 { pairs.append(2) }
 
             if pairs.count == 2 {
                 return pairs[0] + pairs[1]
@@ -63,11 +63,11 @@ struct Roll {
         }
     }
     
-    private func number(_ num: Int) -> Int {
-        return (num == d1 ? num : 0) +
-        (num == d2 ? num : 0) +
-        (num == d3 ? num : 0) +
-        (num == d4 ? num : 0) +
-        (num == d5 ? num : 0)
+    private func count(showingSide num: Int) -> Int {
+        return (num == d1 ? 1 : 0) +
+        (num == d2 ? 1 : 0) +
+        (num == d3 ? 1 : 0) +
+        (num == d4 ? 1 : 0) +
+        (num == d5 ? 1 : 0)
     }
 }
