@@ -14,8 +14,6 @@ struct Roll {
     
     func score(_ scoreType: ScoreType) -> Int {
         switch scoreType {
-        case .chance:
-            return d1 + d2 + d3 + d4 + d5
         case .ones:
             return number(1)
         case .twos:
@@ -28,6 +26,15 @@ struct Roll {
             return number(5)
         case .sixes:
             return number(6)
+
+        case .chance:
+            return d1 + d2 + d3 + d4 + d5
+
+        case .yatzy:
+            if d1 == d2 && d2 == d3 && d3 == d4 && d4 == d5 {
+                return 50
+            }
+            return 0
         }
     }
     

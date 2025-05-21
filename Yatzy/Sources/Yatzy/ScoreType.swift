@@ -8,11 +8,14 @@
 import Foundation
 
 enum ScoreType {
-    case chance
     case ones
     case twos
     case threes
     case fours
     case fives
     case sixes
+
+    case yatzy
+
+    case chance
 }
