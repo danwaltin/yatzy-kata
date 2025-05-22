@@ -62,6 +62,16 @@ struct Roll {
             
             return 0
 
+        case .fourOfAKind:
+            if count(showingSide: 6) >= 4 { return 24 }
+            if count(showingSide: 5) >= 4 { return 20 }
+            if count(showingSide: 4) >= 4 { return 16 }
+            if count(showingSide: 3) >= 4 { return 12 }
+            if count(showingSide: 2) >= 4 { return  8 }
+            if count(showingSide: 1) >= 4 { return  4 }
+            
+            return 0
+
         case .chance:
             return d1 + d2 + d3 + d4 + d5
 
