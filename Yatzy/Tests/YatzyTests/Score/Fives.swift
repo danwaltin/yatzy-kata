@@ -41,8 +41,8 @@ import Testing
 
     (   5, 5, 5, 5, 5, 25),
 ])
-func fives(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) async throws {
-    let roll = Roll(d1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
-    
-    #expect(roll.score(.fives) == expectedScore)
+func fives(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+    assert(score: expectedScore,
+           for: .fives,
+           whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
 }

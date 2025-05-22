@@ -41,10 +41,10 @@ import Testing
 
     (   1, 1, 1, 1, 1,  5),
 ])
-func ones(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) async throws {
-    let roll = Roll(d1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
-    
-    #expect(roll.score(.ones) == expectedScore)
+func ones(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+    assert(score: expectedScore,
+           for: .ones,
+           whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
 }
 
 
