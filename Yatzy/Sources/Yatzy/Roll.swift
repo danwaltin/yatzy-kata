@@ -55,6 +55,7 @@ struct Roll {
             if pairs.count == 2 {
                 return pairs[0] + pairs[1]
             }
+
             return 0
 
         case .threeOfAKind:
@@ -96,6 +97,27 @@ struct Roll {
             return 0
 
         case .fullHouse:
+            var twoEqual = 0
+            var threeEqual = 0
+            
+            if count(showingSide: 6) == 2 { twoEqual = 12 }
+            if count(showingSide: 5) == 2 { twoEqual = 10 }
+            if count(showingSide: 4) == 2 { twoEqual =  8 }
+            if count(showingSide: 3) == 2 { twoEqual =  6 }
+            if count(showingSide: 2) == 2 { twoEqual =  4 }
+            if count(showingSide: 1) == 2 { twoEqual =  2 }
+
+            if count(showingSide: 6) == 3 { threeEqual = 18 }
+            if count(showingSide: 5) == 3 { threeEqual = 15 }
+            if count(showingSide: 4) == 3 { threeEqual = 12 }
+            if count(showingSide: 3) == 3 { threeEqual =  9 }
+            if count(showingSide: 2) == 3 { threeEqual =  6 }
+            if count(showingSide: 1) == 3 { threeEqual =  3 }
+
+            if twoEqual > 0 && threeEqual > 0 {
+                return twoEqual + threeEqual
+            }
+
             return 0
 
         case .chance:
