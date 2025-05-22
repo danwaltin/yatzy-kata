@@ -95,6 +95,9 @@ struct Roll {
 
             return 0
 
+        case .fullHouse:
+            return 0
+
         case .chance:
             return d1 + d2 + d3 + d4 + d5
 

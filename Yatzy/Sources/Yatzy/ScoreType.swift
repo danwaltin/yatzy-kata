@@ -22,6 +22,7 @@ enum ScoreType {
     
     case smallStraight
     case largeStraight
+    case fullHouse
     
     case chance
     case yatzy
