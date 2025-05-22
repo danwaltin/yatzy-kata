@@ -14,43 +14,37 @@ struct Roll {
     
     func score(_ scoreType: ScoreType) -> Int {
         switch scoreType {
-        case .ones:
-            return count(showingSide: 1)
+        case .ones:   return numOnes   * 1
 
-        case .twos:
-            return count(showingSide: 2) * 2
+        case .twos:   return numTwos   * 2
 
-        case .threes:
-            return count(showingSide: 3) * 3
+        case .threes: return numThrees * 3
 
-        case .fours:
-            return count(showingSide: 4) * 4
+        case .fours:  return numFours  * 4
 
-        case .fives:
-            return count(showingSide: 5) * 5
+        case .fives:  return numFives  * 5
 
-        case .sixes:
-            return count(showingSide: 6) * 6
+        case .sixes:  return numSixes  * 6
 
         case .pair:
-            if count(showingSide: 6) >= 2 { return 12 }
-            if count(showingSide: 5) >= 2 { return 10 }
-            if count(showingSide: 4) >= 2 { return  8 }
-            if count(showingSide: 3) >= 2 { return  6 }
-            if count(showingSide: 2) >= 2 { return  4 }
-            if count(showingSide: 1) >= 2 { return  2 }
+            if numSixes  >= 2 { return 12 }
+            if numFives  >= 2 { return 10 }
+            if numFours  >= 2 { return  8 }
+            if numThrees >= 2 { return  6 }
+            if numTwos   >= 2 { return  4 }
+            if numOnes   >= 2 { return  2 }
             
             return 0
 
         case .twoPairs:
             var pairs = [Int]()
             
-            if count(showingSide: 6) >= 2 { pairs.append(12) }
-            if count(showingSide: 5) >= 2 { pairs.append(10) }
-            if count(showingSide: 4) >= 2 { pairs.append( 8) }
-            if count(showingSide: 3) >= 2 { pairs.append( 6) }
-            if count(showingSide: 2) >= 2 { pairs.append( 4) }
-            if count(showingSide: 1) >= 2 { pairs.append( 2) }
+            if numSixes  >= 2 { pairs.append(12) }
+            if numFives  >= 2 { pairs.append(10) }
+            if numFours  >= 2 { pairs.append( 8) }
+            if numThrees >= 2 { pairs.append( 6) }
+            if numTwos   >= 2 { pairs.append( 4) }
+            if numOnes   >= 2 { pairs.append( 2) }
 
             if pairs.count == 2 {
                 return pairs[0] + pairs[1]
@@ -59,40 +53,40 @@ struct Roll {
             return 0
 
         case .threeOfAKind:
-            if count(showingSide: 6) >= 3 { return 18 }
-            if count(showingSide: 5) >= 3 { return 15 }
-            if count(showingSide: 4) >= 3 { return 12 }
-            if count(showingSide: 3) >= 3 { return  9 }
-            if count(showingSide: 2) >= 3 { return  6 }
-            if count(showingSide: 1) >= 3 { return  3 }
+            if numSixes  >= 3 { return 18 }
+            if numFives  >= 3 { return 15 }
+            if numFours  >= 3 { return 12 }
+            if numThrees >= 3 { return  9 }
+            if numTwos   >= 3 { return  6 }
+            if numOnes   >= 3 { return  3 }
             
             return 0
 
         case .fourOfAKind:
-            if count(showingSide: 6) >= 4 { return 24 }
-            if count(showingSide: 5) >= 4 { return 20 }
-            if count(showingSide: 4) >= 4 { return 16 }
-            if count(showingSide: 3) >= 4 { return 12 }
-            if count(showingSide: 2) >= 4 { return  8 }
-            if count(showingSide: 1) >= 4 { return  4 }
+            if numSixes  >= 4 { return 24 }
+            if numFives  >= 4 { return 20 }
+            if numFours  >= 4 { return 16 }
+            if numThrees >= 4 { return 12 }
+            if numTwos   >= 4 { return  8 }
+            if numOnes   >= 4 { return  4 }
             
             return 0
 
         case .smallStraight:
-            if count(showingSide: 1) == 1,
-                count(showingSide: 2) == 1,
-                count(showingSide: 3) == 1,
-                count(showingSide: 4) == 1,
-                count(showingSide: 5) == 1 { return 15 }
+            if numOnes   == 1,
+               numTwos   == 1,
+               numThrees == 1,
+               numFours  == 1,
+               numFives  == 1 { return 15 }
 
             return 0
 
         case .largeStraight:
-            if count(showingSide: 2) == 1,
-                count(showingSide: 3) == 1,
-                count(showingSide: 4) == 1,
-                count(showingSide: 5) == 1,
-                count(showingSide: 6) == 1 { return 20 }
+            if numTwos   == 1,
+               numThrees == 1,
+               numFours  == 1,
+               numFives  == 1,
+               numSixes  == 1 { return 20 }
 
             return 0
 
@@ -100,19 +94,19 @@ struct Roll {
             var twoEqual = 0
             var threeEqual = 0
             
-            if count(showingSide: 6) == 2 { twoEqual = 12 }
-            if count(showingSide: 5) == 2 { twoEqual = 10 }
-            if count(showingSide: 4) == 2 { twoEqual =  8 }
-            if count(showingSide: 3) == 2 { twoEqual =  6 }
-            if count(showingSide: 2) == 2 { twoEqual =  4 }
-            if count(showingSide: 1) == 2 { twoEqual =  2 }
+            if numSixes  == 2 { twoEqual = 12 }
+            if numFives  == 2 { twoEqual = 10 }
+            if numFours  == 2 { twoEqual =  8 }
+            if numThrees == 2 { twoEqual =  6 }
+            if numTwos   == 2 { twoEqual =  4 }
+            if numOnes   == 2 { twoEqual =  2 }
 
-            if count(showingSide: 6) == 3 { threeEqual = 18 }
-            if count(showingSide: 5) == 3 { threeEqual = 15 }
-            if count(showingSide: 4) == 3 { threeEqual = 12 }
-            if count(showingSide: 3) == 3 { threeEqual =  9 }
-            if count(showingSide: 2) == 3 { threeEqual =  6 }
-            if count(showingSide: 1) == 3 { threeEqual =  3 }
+            if numSixes  == 3 { threeEqual = 18 }
+            if numFives  == 3 { threeEqual = 15 }
+            if numFours  == 3 { threeEqual = 12 }
+            if numThrees == 3 { threeEqual =  9 }
+            if numTwos   == 3 { threeEqual =  6 }
+            if numOnes   == 3 { threeEqual =  3 }
 
             if twoEqual > 0 && threeEqual > 0 {
                 return twoEqual + threeEqual
@@ -131,6 +125,13 @@ struct Roll {
         }
     }
     
+    private var numOnes:   Int { count(showingSide: 1)}
+    private var numTwos:   Int { count(showingSide: 2)}
+    private var numThrees: Int { count(showingSide: 3)}
+    private var numFours:  Int { count(showingSide: 4)}
+    private var numFives:  Int { count(showingSide: 5)}
+    private var numSixes:  Int { count(showingSide: 6)}
+
     private func count(showingSide num: Int) -> Int {
         return (num == d1 ? 1 : 0) +
         (num == d2 ? 1 : 0) +
