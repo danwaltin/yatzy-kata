@@ -91,25 +91,25 @@ struct Roll {
             return 0
 
         case .fullHouse:
-            var twoEqual = 0
-            var threeEqual = 0
+            var pair = 0
+            var threeOfAKind = 0
             
-            if numSixes  == 2 { twoEqual = 12 }
-            if numFives  == 2 { twoEqual = 10 }
-            if numFours  == 2 { twoEqual =  8 }
-            if numThrees == 2 { twoEqual =  6 }
-            if numTwos   == 2 { twoEqual =  4 }
-            if numOnes   == 2 { twoEqual =  2 }
+            if numSixes  == 2 { pair = 12 }
+            if numFives  == 2 { pair = 10 }
+            if numFours  == 2 { pair =  8 }
+            if numThrees == 2 { pair =  6 }
+            if numTwos   == 2 { pair =  4 }
+            if numOnes   == 2 { pair =  2 }
 
-            if numSixes  == 3 { threeEqual = 18 }
-            if numFives  == 3 { threeEqual = 15 }
-            if numFours  == 3 { threeEqual = 12 }
-            if numThrees == 3 { threeEqual =  9 }
-            if numTwos   == 3 { threeEqual =  6 }
-            if numOnes   == 3 { threeEqual =  3 }
+            if numSixes  == 3 { threeOfAKind = 18 }
+            if numFives  == 3 { threeOfAKind = 15 }
+            if numFours  == 3 { threeOfAKind = 12 }
+            if numThrees == 3 { threeOfAKind =  9 }
+            if numTwos   == 3 { threeOfAKind =  6 }
+            if numOnes   == 3 { threeOfAKind =  3 }
 
-            if twoEqual > 0 && threeEqual > 0 {
-                return twoEqual + threeEqual
+            if pair > 0 && threeOfAKind > 0 {
+                return pair + threeOfAKind
             }
 
             return 0
