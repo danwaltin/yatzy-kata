@@ -21,6 +21,7 @@ enum ScoreType {
     case fourOfAKind
     
     case smallStraight
+    case largeStraight
     
     case chance
     case yatzy

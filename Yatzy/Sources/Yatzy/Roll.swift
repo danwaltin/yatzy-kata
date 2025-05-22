@@ -78,7 +78,20 @@ struct Roll {
             return 0
 
         case .smallStraight:
-            if count(showingSide: 1) == 1, count(showingSide: 2) == 1, count(showingSide: 3) == 1, count(showingSide: 4) == 1, count(showingSide: 5) == 1 { return 15 }
+            if count(showingSide: 1) == 1,
+                count(showingSide: 2) == 1,
+                count(showingSide: 3) == 1,
+                count(showingSide: 4) == 1,
+                count(showingSide: 5) == 1 { return 15 }
+
+            return 0
+
+        case .largeStraight:
+            if count(showingSide: 2) == 1,
+                count(showingSide: 3) == 1,
+                count(showingSide: 4) == 1,
+                count(showingSide: 5) == 1,
+                count(showingSide: 6) == 1 { return 20 }
 
             return 0
 
