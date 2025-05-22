@@ -9,40 +9,87 @@
 import Testing
 @testable import Yatzy
 
-@Test(arguments: [
-    // d1 d2 d3 d4 d5  expectedScore
-    // -----------------------------
-    (   1, 2, 3, 4, 5,  0),
+@Suite struct Sixes {
+    @Test(arguments: [
+        // d1 d2 d3 d4 d5  expectedScore
+        // -----------------------------
+        (   1, 2, 3, 4, 5,  0),
+    ])
+    func zero_sixes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+        assert(score: expectedScore,
+               for: .sixes,
+               whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    }
 
-    (   6, 2, 3, 4, 5,  6),
-    (   2, 6, 5, 4, 3,  6),
-    (   2, 5, 6, 3, 2,  6),
-    (   2, 5, 4, 6, 2,  6),
-    (   2, 5, 4, 3, 6,  6),
-    
-    (   6, 6, 2, 2, 2, 12),
-    (   6, 3, 6, 3, 3, 12),
-    (   6, 4, 4, 6, 4, 12),
-    (   6, 5, 5, 5, 6, 12),
-    (   2, 6, 6, 2, 2, 12),
-    (   3, 6, 3, 6, 4, 12),
-    (   4, 6, 4, 4, 6, 12),
-    (   5, 5, 6, 6, 5, 12),
-    (   2, 2, 6, 2, 6, 12),
-    (   3, 3, 3, 6, 6, 12),
+    @Test(arguments: [
+        // d1 d2 d3 d4 d5  expectedScore
+        // -----------------------------
+        (   6, 2, 3, 4, 5,  6),
+        (   2, 6, 5, 4, 3,  6),
+        (   2, 5, 6, 3, 2,  6),
+        (   2, 5, 4, 6, 2,  6),
+        (   2, 5, 4, 3, 6,  6),
+    ])
+    func one_sixe(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+        assert(score: expectedScore,
+               for: .sixes,
+               whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    }
 
-    (   6, 6, 6, 2, 2, 18),
-    (   6, 3, 6, 3, 6, 18),
-    (   6, 4, 5, 6, 6, 18),
+    @Test(arguments: [
+        // d1 d2 d3 d4 d5  expectedScore
+        // -----------------------------
+        (   6, 6, 2, 2, 2, 12),
+        (   6, 3, 6, 3, 3, 12),
+        (   6, 4, 4, 6, 4, 12),
+        (   6, 5, 5, 5, 6, 12),
+        (   2, 6, 6, 2, 2, 12),
+        (   3, 6, 3, 6, 4, 12),
+        (   4, 6, 4, 4, 6, 12),
+        (   5, 5, 6, 6, 5, 12),
+        (   2, 2, 6, 2, 6, 12),
+        (   3, 3, 3, 6, 6, 12),
+    ])
+    func two_sixes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+        assert(score: expectedScore,
+               for: .sixes,
+               whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    }
 
-    (   6, 6, 6, 2, 6, 24),
-    (   6, 3, 6, 6, 6, 24),
-    (   5, 6, 6, 6, 6, 24),
+    @Test(arguments: [
+        // d1 d2 d3 d4 d5  expectedScore
+        // -----------------------------
+        (   6, 6, 6, 2, 2, 18),
+        (   6, 3, 6, 3, 6, 18),
+        (   6, 4, 5, 6, 6, 18),
+    ])
+    func three_sixes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+        assert(score: expectedScore,
+               for: .sixes,
+               whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    }
 
-    (   6, 6, 6, 6, 6, 30),
-])
-func sixes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
-    assert(score: expectedScore,
-           for: .sixes,
-           whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    @Test(arguments: [
+        // d1 d2 d3 d4 d5  expectedScore
+        // -----------------------------
+        (   6, 6, 6, 2, 6, 24),
+        (   6, 3, 6, 6, 6, 24),
+        (   5, 6, 6, 6, 6, 24),
+    ])
+    func four_sixes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+        assert(score: expectedScore,
+               for: .sixes,
+               whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    }
+
+    @Test(arguments: [
+        // d1 d2 d3 d4 d5  expectedScore
+        // -----------------------------
+        (   6, 6, 6, 6, 6, 30),
+    ])
+    func five_sixes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+        assert(score: expectedScore,
+               for: .sixes,
+               whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    }
 }

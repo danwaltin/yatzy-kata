@@ -9,42 +9,87 @@
 import Testing
 @testable import Yatzy
 
-@Test(arguments: [
-    // d1 d2 d3 d4 d5  expectedScore
-    // -----------------------------
-    (   6, 1, 1, 4, 5,  0),
+@Suite struct Threes {
+    @Test(arguments: [
+        // d1 d2 d3 d4 d5  expectedScore
+        // -----------------------------
+        (   6, 1, 1, 4, 5,  0),
+    ])
+    func zero_threes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+        assert(score: expectedScore,
+               for: .threes,
+               whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    }
+    
+    @Test(arguments: [
+        // d1 d2 d3 d4 d5  expectedScore
+        // -----------------------------
+        (   3, 1, 1, 4, 5,  3),
+        (   6, 3, 5, 4, 1,  3),
+        (   6, 5, 3, 1, 1,  3),
+        (   6, 5, 4, 3, 1,  3),
+        (   6, 5, 4, 1, 3,  3),
+    ])
+    func one_three(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+        assert(score: expectedScore,
+               for: .threes,
+               whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    }
+    
+    @Test(arguments: [
+        // d1 d2 d3 d4 d5  expectedScore
+        // -----------------------------
+        (   3, 3, 1, 1, 1,  6),
+        (   3, 1, 3, 1, 1,  6),
+        (   3, 4, 4, 3, 4,  6),
+        (   3, 5, 5, 5, 3,  6),
+        (   1, 3, 3, 1, 1,  6),
+        (   1, 3, 1, 3, 4,  6),
+        (   4, 3, 4, 4, 3,  6),
+        (   5, 5, 3, 3, 5,  6),
+        (   6, 6, 3, 6, 3,  6),
+        (   1, 1, 1, 3, 3,  6),
+    ])
+    func two_threes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+        assert(score: expectedScore,
+               for: .threes,
+               whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    }
+    
+    @Test(arguments: [
+        // d1 d2 d3 d4 d5  expectedScore
+        // -----------------------------
+        (   3, 3, 3, 5, 6,  9),
+        (   3, 1, 3, 1, 3,  9),
+        (   3, 4, 6, 3, 3,  9),
+    ])
+    func three_threes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+        assert(score: expectedScore,
+               for: .threes,
+               whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    }
+    
+    @Test(arguments: [
+        // d1 d2 d3 d4 d5  expectedScore
+        // -----------------------------
+        (   3, 3, 3, 6, 3, 12),
+        (   3, 1, 3, 3, 3, 12),
+        (   5, 3, 3, 3, 3, 12),
+    ])
+    func four_threes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+        assert(score: expectedScore,
+               for: .threes,
+               whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    }
 
-    (   3, 1, 1, 4, 5,  3),
-    (   6, 3, 5, 4, 1,  3),
-    (   6, 5, 3, 1, 1,  3),
-    (   6, 5, 4, 3, 1,  3),
-    (   6, 5, 4, 1, 3,  3),
-    
-    (   3, 3, 1, 1, 1,  6),
-    (   3, 1, 3, 1, 1,  6),
-    (   3, 4, 4, 3, 4,  6),
-    (   3, 5, 5, 5, 3,  6),
-    (   1, 3, 3, 1, 1,  6),
-    (   1, 3, 1, 3, 4,  6),
-    (   4, 3, 4, 4, 3,  6),
-    (   5, 5, 3, 3, 5,  6),
-    (   6, 6, 3, 6, 3,  6),
-    (   1, 1, 1, 3, 3,  6),
-    
-    (   3, 3, 3, 5, 6,  9),
-    (   3, 1, 3, 1, 3,  9),
-    (   3, 4, 6, 3, 3,  9),
-    
-    (   3, 3, 3, 6, 3, 12),
-    (   3, 1, 3, 3, 3, 12),
-    (   5, 3, 3, 3, 3, 12),
-    
-    (   3, 3, 3, 3, 3, 15),
-])
-func threes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
-    assert(score: expectedScore,
-           for: .threes,
-           whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    @Test(arguments: [
+        // d1 d2 d3 d4 d5  expectedScore
+        // -----------------------------
+        (   3, 3, 3, 3, 3, 15),
+    ])
+    func five_threes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, expectedScore: Int) {
+        assert(score: expectedScore,
+               for: .threes,
+               whenRollingD1: d1, d2: d2, d3: d3, d4: d4, d5: d5)
+    }
 }
-
-
