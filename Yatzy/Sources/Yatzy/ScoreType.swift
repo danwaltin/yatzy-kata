@@ -17,6 +17,7 @@ enum ScoreType {
 
     case pair
     case twoPairs
+    case threeOfAKind
     
     case chance
     case yatzy

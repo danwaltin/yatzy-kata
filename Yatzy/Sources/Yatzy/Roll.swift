@@ -30,10 +30,10 @@ struct Roll {
         case .pair:
             if count(showingSide: 6) >= 2 { return 12 }
             if count(showingSide: 5) >= 2 { return 10 }
-            if count(showingSide: 4) >= 2 { return 8 }
-            if count(showingSide: 3) >= 2 { return 6 }
-            if count(showingSide: 2) >= 2 { return 4 }
-            if count(showingSide: 1) >= 2 { return 2 }
+            if count(showingSide: 4) >= 2 { return  8 }
+            if count(showingSide: 3) >= 2 { return  6 }
+            if count(showingSide: 2) >= 2 { return  4 }
+            if count(showingSide: 1) >= 2 { return  2 }
             
             return 0
 
@@ -42,14 +42,24 @@ struct Roll {
             
             if count(showingSide: 6) >= 2 { pairs.append(12) }
             if count(showingSide: 5) >= 2 { pairs.append(10) }
-            if count(showingSide: 4) >= 2 { pairs.append(8) }
-            if count(showingSide: 3) >= 2 { pairs.append(6) }
-            if count(showingSide: 2) >= 2 { pairs.append(4) }
-            if count(showingSide: 1) >= 2 { pairs.append(2) }
+            if count(showingSide: 4) >= 2 { pairs.append( 8) }
+            if count(showingSide: 3) >= 2 { pairs.append( 6) }
+            if count(showingSide: 2) >= 2 { pairs.append( 4) }
+            if count(showingSide: 1) >= 2 { pairs.append( 2) }
 
             if pairs.count == 2 {
                 return pairs[0] + pairs[1]
             }
+            return 0
+
+        case .threeOfAKind:
+            if count(showingSide: 6) >= 3 { return 18 }
+            if count(showingSide: 5) >= 3 { return 15 }
+            if count(showingSide: 4) >= 3 { return 12 }
+            if count(showingSide: 3) >= 3 { return  9 }
+            if count(showingSide: 2) >= 3 { return  6 }
+            if count(showingSide: 1) >= 3 { return  3 }
+            
             return 0
 
         case .chance:
