@@ -16,14 +16,19 @@ struct Roll {
         switch scoreType {
         case .ones:
             return count(showingSide: 1)
+
         case .twos:
             return count(showingSide: 2) * 2
+
         case .threes:
             return count(showingSide: 3) * 3
+
         case .fours:
             return count(showingSide: 4) * 4
+
         case .fives:
             return count(showingSide: 5) * 5
+
         case .sixes:
             return count(showingSide: 6) * 6
 
@@ -70,6 +75,9 @@ struct Roll {
             if count(showingSide: 2) >= 4 { return  8 }
             if count(showingSide: 1) >= 4 { return  4 }
             
+            return 0
+
+        case .smallStraight:
             return 0
 
         case .chance:

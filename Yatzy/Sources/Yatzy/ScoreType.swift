@@ -20,6 +20,8 @@ enum ScoreType {
     case threeOfAKind
     case fourOfAKind
     
+    case smallStraight
+    
     case chance
     case yatzy
 }
